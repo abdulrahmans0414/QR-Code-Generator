@@ -4,7 +4,7 @@
 
 import inquirer from "inquirer";
 import qr from "qr-image";
-
+import fs from "fs";
 
 inquirer
     .prompt([
@@ -19,8 +19,8 @@ inquirer
         const url = answers.URL;
 
         // qr-image 
-        var qr_svg = qr.image('I love QR!', { type: 'svg' });
-        qr_svg.pipe(require('fs').createWriteStream('i_love_qr.svg'));
+        var qr_svg = qr.image(url);
+        qr_svg.pipe(fs.createWriteStream('qr_img.png'));
     })
     .catch((error) => {
         if (error.isTtyError) {
