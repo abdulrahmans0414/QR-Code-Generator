@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/abdulrahmans0414/QR-Code/issues"
   },
-  "homepage": "https://github.com/abdulrahmans0414/QR-Code#readme"
+  "homepage": "https://github.com/abdulrahmans0414/QR-Code#readme",
+  "dependencies": {
+    "inquirer": "^9.2.12",
+    "qr-image": "^3.2.0"
+  }
 }
