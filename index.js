@@ -23,7 +23,7 @@ inquirer
         qr_svg.pipe(fs.createWriteStream('qr_img.png'));
 
         // fs write file 
-        writeFile("message.txt", data, (err) =>{
+        fs.writeFile("URL.txt", url, (err) =>{
             if(err) throw err;
             console.log("The file has been saved!");
         }); 
