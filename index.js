@@ -9,9 +9,15 @@ import inquirer from "inquirer";
 inquirer
     .prompt([
         /* Pass your questions in here */
+        {
+            message: "Type in your URL: ",
+            name: "URL",
+        },
     ])
     .then((answers) => {
         // Use user feedback for... whatever!!
+        console.log(answers);
+        const url = answers.URL;
     })
     .catch((error) => {
         if (error.isTtyError) {
