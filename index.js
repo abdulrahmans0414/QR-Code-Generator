@@ -3,7 +3,7 @@
 // Create a txt file to save the user input using the native fs node module.
 
 import inquirer from "inquirer";
-
+import qr from "qr-image";
 
 
 inquirer
@@ -16,8 +16,11 @@ inquirer
     ])
     .then((answers) => {
         // Use user feedback for... whatever!!
-        console.log(answers);
         const url = answers.URL;
+
+        // qr-image 
+        var qr_svg = qr.image('I love QR!', { type: 'svg' });
+        qr_svg.pipe(require('fs').createWriteStream('i_love_qr.svg'));
     })
     .catch((error) => {
         if (error.isTtyError) {
